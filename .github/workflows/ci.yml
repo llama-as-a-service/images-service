@@ -7,7 +7,7 @@ on:
       - 'main'
 
 env:
-  MONGO_URI: 'mongodb://test:testpassword@localhost:27017'\
+  MONGO_URI: 'mongodb://test:testpassword@localhost:27017'
 
 jobs:
 
