@@ -4,6 +4,8 @@
 
 Image API Service. Built with NodeJS, Express, and Docker. Connects to the MongoDB Image Database.
 
+> Example request: `curl images-service.vercel.app/random`
+
 ## ⚙️ Setup
 ```sh
 $ git clone https://github.com/llama-as-a-service/images-service.git
