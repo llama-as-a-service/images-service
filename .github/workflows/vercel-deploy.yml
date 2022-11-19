@@ -23,8 +23,7 @@ jobs:
      - name: "Deploy application"
        run: |
          npm i vercel -g
-         vercel --token ${{ secrets.VERCEL_TOKEN }}
-         vercel env add MONGO_URI ${{ secrets.MONGO_URI_IMAGES }}
+         vercel --token ${{ secrets.VERCEL_TOKEN }} env add MONGO_URI ${{ secrets.MONGO_URI_IMAGES }}
          vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
        env:
          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
