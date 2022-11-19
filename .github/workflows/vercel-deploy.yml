@@ -11,6 +11,7 @@ jobs:
  vercel:
    runs-on: ubuntu-latest
    name: "Deploy application"
+   environment: production
   
    steps:
      - uses: actions/checkout@v3
