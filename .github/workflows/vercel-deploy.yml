@@ -1,0 +1,26 @@
+# This workflow will do a clean installation of the dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+ 
+name: "Deploy CI"
+ 
+on:
+ push:
+ workflow_dispatch:
+ 
+jobs:
+ vercel:
+   runs-on: ubuntu-latest
+   name: "Deploy application"
+  
+   steps:
+     - uses: actions/checkout@v3
+     - uses: actions/setup-node@v3
+       with:
+         node-version: 16
+         registry-url: https://registry.npmjs.org/
+ 
+     - name: "Deploy application"
+       run: |
+         npx vercel --token ${VERCEL_TOKEN} --prod
+       env:
+         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
