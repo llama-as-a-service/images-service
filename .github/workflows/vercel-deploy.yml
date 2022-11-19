@@ -22,7 +22,7 @@ jobs:
  
      - name: "Deploy application"
        run: |
-         npx vercel env add MONGO_URI ${{ secrets.MONGO_URI_IMAGES }}
+         npx vercel env add MONGO_URI ${{ secrets.MONGO_URI_IMAGES }} --token ${{ secrets.VERCEL_TOKEN }}
          npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
        env:
          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
